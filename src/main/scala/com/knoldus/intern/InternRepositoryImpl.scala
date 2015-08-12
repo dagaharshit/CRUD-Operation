@@ -10,7 +10,7 @@ import java.sql.SQLException
 /**
  * @author knoldus
  */
-class InternRepositoryImpl extends InternRepository with DBConnection {
+object InternRepositoryImpl extends InternRepository with DBConnection {
 
   var connection: Connection =_
 

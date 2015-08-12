@@ -13,7 +13,7 @@ import com.knoldus.intern.Intern
 
 class InternRepositoryImplTest extends FunSuite with BeforeAndAfter with DBConnection {
 
-  val internRepImpl = new InternRepositoryImpl()
+  //val internRepImpl = new InternRepositoryImpl()
 
   before {
     val conn = getConnection()
@@ -39,7 +39,7 @@ class InternRepositoryImplTest extends FunSuite with BeforeAndAfter with DBConne
 
     //    val result = insert(data)
 
-    val result = internRepImpl.insert(data)
+    val result = InternRepositoryImpl.insert(data)
     assert(result == 1)
   }
 
@@ -47,7 +47,7 @@ class InternRepositoryImplTest extends FunSuite with BeforeAndAfter with DBConne
 
     val data = Intern(1, "Ram Ji", "IIT KGP", "ram@iit.com", "Delhi NCR")
 
-    val result = internRepImpl.update(data)
+    val result = InternRepositoryImpl.update(data)
 
     assert(result==false)
 
@@ -55,7 +55,7 @@ class InternRepositoryImplTest extends FunSuite with BeforeAndAfter with DBConne
   
   test("Test case for internList()")
   {
-    val result = internRepImpl.internList()
+    val result = InternRepositoryImpl.internList()
     
     val rs = result match {
       case _: List[Intern]=> true
@@ -67,7 +67,7 @@ class InternRepositoryImplTest extends FunSuite with BeforeAndAfter with DBConne
   test("Test case for delete method")
   {
     
-    assert(internRepImpl.delete(1) == false)
+    assert(InternRepositoryImpl.delete(1) == false)
     
     
   }
